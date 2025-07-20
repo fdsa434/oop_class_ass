@@ -7,7 +7,7 @@ namespace oop_class_ass
         static void Main(string[] args)
         {
             #region question 1
-            employee[] employees = new employee[2];
+            employee[] employees = new employee[3];
 
             for (int i = 0; i < employees.Length; i++)
             {
@@ -39,12 +39,11 @@ namespace oop_class_ass
                 do
                 {
                     Console.WriteLine("Choose Security Level:");
-                    Console.WriteLine("0 - Guest");
-                    Console.WriteLine("1 - Developer");
+                    Console.WriteLine("1 - guest");
                     Console.WriteLine("2 - DBA");
-                    Console.WriteLine("3 - Secretary");
+                    Console.WriteLine("3 - Security office");
                     Console.Write("Your Choice: ");
-                } while (!byte.TryParse(Console.ReadLine(), out levelChoice) || levelChoice > 3);
+                } while (!byte.TryParse(Console.ReadLine(), out levelChoice) || levelChoice < 1 || levelChoice > 3);
                 level lvl = (level)levelChoice;
 
                 int day;
@@ -68,15 +67,16 @@ namespace oop_class_ass
                 HiringDate hireDate = new HiringDate { Day = day, Month = month, Year = year };
 
                 employee emp = new employee();
-
+                permissions p;
                 emp.Name = name;
                 emp.Salary = salary;
                 emp.Gender = gen;
                 emp.Securty_level = lvl;
                 emp.Hire_date = hireDate;
-                
+            
+              
 
-                employees[i] = emp;
+                    employees[i] = emp;
             }
             //4
             Console.WriteLine("\n \n All Employees \n \n ---");
