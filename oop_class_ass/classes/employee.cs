@@ -65,30 +65,7 @@ namespace oop_class_ass.classes
                 }
             }
         }
-        public permissions Per
-        {
-            get
-            {
-                return permission;
-            }
-            set
-            {
-                if(securty_level== level.guest)
-                {
-                    permission = (permissions)permissions.read;
-
-                }
-                else if (securty_level == level.DBA)
-                {
-                    permission = (permissions)permissions.write;
-
-                }
-                else if (securty_level == level.security_office)
-                {
-                    permission = (permissions)15;
-                }
-            }
-        }
+      
         public string Name
         {
             get
